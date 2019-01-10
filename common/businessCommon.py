@@ -4,8 +4,8 @@ import readConfig as readConfig
 
 localReadConfig = readConfig.ReadConfig()
 localConfigHttp = configHttp.ConfigHttp()
-localLogin_xls = common.get_xls("userCase.xlsx", "login")
-localAddAddress_xls = common.get_xls("userCase.xlsx", "addAddress")
+# localLogin_xls = common.get_xls("userCase.xlsx", "login")
+# localAddAddress_xls = common.get_xls("userCase.xlsx", "addAddress")
 
 
 # login

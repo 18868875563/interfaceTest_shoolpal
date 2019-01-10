@@ -70,7 +70,7 @@ class AllTest:
                 logger.info("********TEST START********")
                 fp = open(resultPath, 'wb')
                 runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Test Report', description='Test Description')
-                runner.run(suit)
+                runner.run(suit, logger)
             else:
                 logger.info("Have no case to test.")
         except Exception as ex:

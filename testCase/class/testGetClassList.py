@@ -35,7 +35,7 @@ class GetClassList(unittest.TestCase):
         self.token = str(token)
         self.email = str(email)
         self.password = str(password)
-        self .result = str(result)
+        self.result = str(result)
         self.code = str(code)
         self.msg = str(msg)
         self.pageIndex = str(pageIndex)
@@ -69,12 +69,12 @@ class GetClassList(unittest.TestCase):
         localConfigHttp.set_url(self.url)
 
         # set header
-        if self.token == '0':
-            token = self.login_token
-        else:
-            token = self.token
-        header = {'token': token}
-        localConfigHttp.set_headers(header)
+        # if self.token == '0':
+        #     token = self.login_token
+        # else:
+        #     token = self.token
+        # header = {'token': token}
+        # localConfigHttp.set_headers(header)
 
         # set param
         data = {'pageIndex': self.pageIndex,
@@ -92,7 +92,7 @@ class GetClassList(unittest.TestCase):
                 :return:
                 """
         # logout
-        businessCommon.logout(self.login_token)
+        # businessCommon.logout(self.login_token)
         self.log.build_case_line(self.case_name, self.info['code'], self.info['msg'])
 
     def checkResult(self):
