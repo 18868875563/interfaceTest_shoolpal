@@ -10,13 +10,13 @@ from common import  businessCommon
 
 localReadConfig = readConfig.ReadConfig()
 localConfigHttp = configHttp.ConfigHttp()
-localClass_xls = common.get_xls("userCase.xlsx", "class")
+localClass_xls = common.get_xls("userCase.xlsx", "user")
 
 
 @paramunittest.parametrized(*localClass_xls)
 class GetClassList(unittest.TestCase):
 
-    def setParameters(self, case_name, method, token, email, password, result, code, msg, pageIndex, pageSize):
+    def setParameters(self, case_name, method, token, email, password, result, code, msg):
         """
                 set params
                 :param case_name:
@@ -39,8 +39,6 @@ class GetClassList(unittest.TestCase):
         self.result = str(result)
         self.code = str(code)
         self.msg = str(msg)
-        self.pageIndex = str(pageIndex)
-        self.pageSize = str(pageSize)
         self.return_json = None
         self.info = None
 
@@ -66,7 +64,7 @@ class GetClassList(unittest.TestCase):
                 :return:
                 """
         # set url
-        self.url = common.get_url_from_xml('getclasslist')
+        self.url = common.get_url_from_xml('getuserinfo')
         localConfigHttp.set_url(self.url)
 
         # set header
@@ -78,8 +76,7 @@ class GetClassList(unittest.TestCase):
         localConfigHttp.set_headers(header)
 
         # set param
-        data = {"pageIndex": self.pageIndex,
-                "pageSize": self.pageSize}
+        data = {}
         localConfigHttp.set_data(data)
 
         # test interface

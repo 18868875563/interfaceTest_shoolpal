@@ -7,8 +7,14 @@
     </url>
 
     <url name="getclasslist">
-        <group>class</group>
+        <group>api</group>
         <module>class</module>
-        <action>info</action>
+        <action>GetClassList</action>
+    </url>
+
+    <url name="getuserinfo">
+        <group>api</group>
+        <module>User</module>
+        <action>GetUserInfo</action>
     </url>
 </interface>

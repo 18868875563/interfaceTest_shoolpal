@@ -21,10 +21,11 @@ def get_visitor_token():
     create a token for visitor
     :return:
     """
-    host = localReadConfig.get_http("BASEURL")
-    response = requests.get(host+"/v2/User/Token/generate")
-    info = response.json()
-    token = info.get("info")
+    # host = localReadConfig.get_http("BASEURL")
+    # response = requests.get(host+"/v2/User/Token/generate")
+    # info = response.json()
+    # token = info.get("info")
+    token = localReadConfig.get_headers("token_b")
     logger.debug("Create token:%s" % (token))
     return token
 
@@ -34,8 +35,8 @@ def set_visitor_token_to_config():
     set token that created for visitor to config
     :return:
     """
-    token_v = get_visitor_token()
-    localReadConfig.set_headers("TOKEN_V", token_v)
+    token_c = get_visitor_token()
+    localReadConfig.set_headers("TOKEN_C", token_c)
 
 
 def get_value_from_return_json(json, name1, name2):
@@ -154,9 +155,9 @@ def get_url_from_xml(name):
             for c in u.getchildren():
                 url_list.append(c.text)
 
-    url = '/v2/' + '/'.join(url_list)
+    url = '/'+'/'.join(url_list)
     return url
 
 if __name__ == "__main__":
-    print(get_xls("login"))
+    # print(get_xls("login"))
     set_visitor_token_to_config()

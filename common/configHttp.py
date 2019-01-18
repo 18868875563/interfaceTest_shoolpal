@@ -91,9 +91,24 @@ class ConfigHttp:
         :return:
         """
         try:
-            response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data,
+            print('开始调用')
+            response = requests.post(self.url, headers=self.headers, data=self.data,
                                      timeout=float(timeout))
             # response.raise_for_status()
+            print(self.url)
+            print(self.headers)
+            # print('请求'+self.params)
+            print(self.data)
+            print(type(response))
+            print(response.status_code)
+            print(type(response.text))
+            response.enconding = 'utf-8'
+            print(response.text)
+            #
+            # print(response.cookies)
+            #
+            # print(response.content)
+            # print(response.content.decode("utf-8"))
             return response
         except TimeoutError:
             self.logger.error("Time out!")

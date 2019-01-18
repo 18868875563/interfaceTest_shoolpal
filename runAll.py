@@ -20,7 +20,7 @@ class AllTest:
         self.caseFile = os.path.join(readConfig.proDir, "testCase")
         # self.caseFile = None
         self.caseList = []
-        self.email = MyEmail.get_email()
+        #self.email = MyEmail.get_email()
 
     def set_case_list(self):
         """
