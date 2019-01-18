@@ -12,7 +12,7 @@ class ConfigHttp:
         global scheme, host, port, timeout
         scheme = localReadConfig.get_http("scheme")
         host = localReadConfig.get_http("baseurl")
-        port = localReadConfig.get_http("port")
+        # port = localReadConfig.get_http("port")
         timeout = localReadConfig.get_http("timeout")
         self.log = Log.get_log()
         self.logger = self.log.get_logger()
